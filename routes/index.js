@@ -4,13 +4,15 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index',{
-    color: "#FFFFFF"
+    color: "#FFFFFF",
+    textColor: "#000000"
   });
 });
 
 module.exports = router;
-router.post('/', function(req, ){
-  res.render('result', {
-    color: req.body.colorPicker
+router.post('/', function(req,res,next ){
+  res.render('index', {
+    color: req.body.colorPicker,
+    textColor: req.body.textColorPicker
   })
 });
